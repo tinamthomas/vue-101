@@ -14,4 +14,11 @@ npx tailwindcss init -p
 
 npm install --save-dev prettier-plugin-tailwindcss
 
+
+```
+
+### vitest globals
+
+```
+npm install --save-dev eslint-plugin-vitest-globals
 ```
