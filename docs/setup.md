@@ -12,4 +12,6 @@ stcss autoprefixer
 
 npx tailwindcss init -p
 
+npm install --save-dev prettier-plugin-tailwindcss
+
 ```
