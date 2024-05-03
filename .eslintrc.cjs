@@ -11,5 +11,8 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  env: {
+    'vitest-globals/env': true
   }
 }

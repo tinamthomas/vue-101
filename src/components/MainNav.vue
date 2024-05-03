@@ -13,7 +13,7 @@ export default {
   name: 'MainNav',
   data() {
     return {
-      company: 'Some careers'
+      company: 'Bobo Careers'
     }
   }
 }
