@@ -11,7 +11,7 @@ export default {
       },
       colors: {
         'brand-gray-1': '#dadce0',
-        'brand-blue-1': '1967d2'
+        'brand-blue-1': '#1967d2'
       }
     }
   },
