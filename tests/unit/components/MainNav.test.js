@@ -8,4 +8,15 @@ describe('Main Navigation', () => {
 
     expect(companyName.textContent).toContain('Bobo Careers')
   })
+  it('should display menu items for navigation', () => {
+    render(MainNav)
+    const navigationMenuItems = screen.getAllByRole('listitem').map((item) => item.textContent)
+    expect(navigationMenuItems).toEqual([
+      'Teams',
+      'Locations',
+      'Life at Bobo Corp',
+      'How we hire',
+      'Jobs'
+    ])
+  })
 })
