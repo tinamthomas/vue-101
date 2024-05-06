@@ -1,5 +1,5 @@
 <template>
-  <button v-bind:class="{ primary }" @click="handleClick">
+  <button v-bind:class="buttonClass" @click="handleClick">
     {{ text }}
   </button>
 </template>
@@ -16,6 +16,11 @@ export default {
   data() {
     return {
       primary: true
+    }
+  },
+  computed: {
+    buttonClass() {
+      return { primary: this.primary }
     }
   }
 }
