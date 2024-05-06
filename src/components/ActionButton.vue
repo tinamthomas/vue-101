@@ -1,5 +1,5 @@
 <template>
-  <button class="primary" @click="handleClick">
+  <button v-bind:class="{ primary }" @click="handleClick">
     {{ text }}
   </button>
 </template>
@@ -12,7 +12,12 @@ export default {
       console.log("I've been clicked")
     }
   },
-  props: ['text']
+  props: ['text'],
+  data() {
+    return {
+      primary: true
+    }
+  }
 }
 </script>
 
