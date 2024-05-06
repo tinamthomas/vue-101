@@ -1,9 +1,6 @@
 <template>
-  <button
-    class="rounded border-0 bg-brand-blue-1 px-5 py-3 font-medium text-white hover:shadow-blue"
-    @click="handleClick"
-  >
-    Sign in
+  <button class="primary" @click="handleClick">
+    {{ text }}
   </button>
 </template>
 
@@ -14,6 +11,16 @@ export default {
     handleClick() {
       console.log("I've been clicked")
     }
-  }
+  },
+  props: ['text']
 }
 </script>
+
+<style scoped>
+button {
+  @apply rounded px-5 py-3 font-medium;
+}
+.primary {
+  @apply border-0 bg-brand-blue-1  text-white hover:shadow-blue;
+}
+</style>
