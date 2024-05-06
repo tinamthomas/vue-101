@@ -11,7 +11,8 @@
           </ul>
         </nav>
         <div class="ml-auto flex h-full items-center">
-          <action-button />
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else v-on:click="loginUser" />
         </div>
       </div>
     </div>
@@ -20,15 +21,22 @@
 
 <script>
 import ActionButton from '@/components/ActionButton.vue'
+import ProfileImage from '@/components/ProfileImage.vue'
 
 export default {
   name: 'MainNav',
-  components: { ActionButton },
+  components: { ActionButton, ProfileImage },
   data() {
     return {
       company: 'Bobo Careers',
       url: 'https://www.google.com',
-      menuItems: ['Teams', 'Locations', 'Life at Bobo Corp', 'How we hire', 'Jobs']
+      menuItems: ['Teams', 'Locations', 'Life at Bobo Corp', 'How we hire', 'Jobs'],
+      isLoggedIn: false
+    }
+  },
+  methods: {
+    loginUser() {
+      this.isLoggedIn = true
     }
   }
 }
