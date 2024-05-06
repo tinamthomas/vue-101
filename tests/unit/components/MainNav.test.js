@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/vue'
 import MainNav from '@/components/MainNav.vue'
+import userEvent from '@testing-library/user-event'
 
 describe('Main Navigation', () => {
   it('displays company name', () => {
@@ -20,13 +21,24 @@ describe('Main Navigation', () => {
     ])
   })
   describe('When User logs in', () => {
-    it('should display user profile', () => {
+    it('should display user profile', async () => {
       render(MainNav)
 
       const profileImage = screen.queryByRole('img', {
         name: /user profile image/i
       })
 
+      expect(profileImage).not.toBeInTheDocument()
+
+      const loginButton = screen.queryByRole('button', {
+        name: /sign in/i
+      })
+
+      userEvent.click(loginButton)
+
+      screen.queryByRole('img', {
+        name: /user profile image/i
+      })
       expect(profileImage).not.toBeInTheDocument()
     })
   })
