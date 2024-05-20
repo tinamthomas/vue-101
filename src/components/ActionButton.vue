@@ -12,15 +12,10 @@ export default {
       console.log("I've been clicked")
     }
   },
-  props: ['text'],
-  data() {
-    return {
-      primary: true
-    }
-  },
+  props: ['text', 'isPrimary', 'type'],
   computed: {
     buttonClass() {
-      return { primary: this.primary }
+      return { primary: this.type === 'primary', secondary: this.type === 'secondary' }
     }
   }
 }
@@ -32,5 +27,8 @@ button {
 }
 .primary {
   @apply border-0 bg-brand-blue-1  text-white hover:shadow-blue;
+}
+.secondary {
+  @apply bg-transparent text-brand-blue-1 hover:text-brand-blue-2;
 }
 </style>
